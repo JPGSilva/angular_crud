@@ -1,0 +1,42 @@
+
+
+<mat-card>
+    <mat-toolbar color= "primary"> Notas Alunos</mat-toolbar>
+    
+    <table mat-table [dataSource]="coursos" class="mat-elevation-z8">
+    
+      
+        <!-- name Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let curso"> {{ curso._id }} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let curso"> {{curso.name}} </td>
+        </ng-container>
+      
+        <!-- Nota1 Column -->
+        <ng-container matColumnDef="nota1">
+          <th mat-header-cell *matHeaderCellDef> Nota1 </th>
+          <td mat-cell *matCellDef="let curso"> {{curso.nota1}} </td>
+        </ng-container>
+      
+        <!-- Nota2 Column -->
+        <ng-container matColumnDef="nota2">
+          <th mat-header-cell *matHeaderCellDef> Nota2 </th>
+          <td mat-cell *matCellDef="let curso"> {{curso.nota2}} </td>
+        </ng-container>
+    
+        <!-- status Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> status </th>
+          <td mat-cell *matCellDef="let curso"> {{curso.status}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card>
